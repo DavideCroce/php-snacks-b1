@@ -60,8 +60,14 @@ $dates = array_keys($posts)
             $date = $dates[$i];
             $post = $posts[$date];
         ?>
-            <em><?= $date ?></em>
-            <h3><?= $date['author'] ?></h3>
+            <h3><em><?= $date ?></em></h3>
+            <?php for ($l = 0; $l < count($post); $l++) { ?>
+                <h3><?= $post[$l]['author'] ?></h3>
+                <h5><?= $post[$l]['title'] ?></h5>
+                <p><?= $post[$l]['text'] ?></p>
+                <img src="<?= $post[$l]['image'] ?>" alt="">
+
+            <? } ?>
         <? } ?>
         </ul>
     </div>
