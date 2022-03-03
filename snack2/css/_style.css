@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.post-info{
+    font-size: 25px;
+}
+
+img{
+    width: 100%;
+    padding: 20px;
+}
+
+.person{
+    font-weight: bolder;
+}
+
+.post-info,
+.post-text,
+.post-img{
+    border: grey solid 1px;
+}
+
+.col-6{
+    background-color: rgb(172, 172, 172);
+    margin-bottom: 50px;
+}

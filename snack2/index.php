@@ -50,27 +50,37 @@ $dates = array_keys($posts)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/_style.css">
     <link rel="icon" href="https://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/256/Luffys-flag-icon.png">
     <title>OneBook</title>
 </head>
 
 <body>
-    <div class="container">
-        <?php for ($i = 0; $i < count($dates); $i++) {
-            $date = $dates[$i];
-            $post = $posts[$date];
-        ?>
-            <h3><em><?= $date ?></em></h3>
-            <?php for ($l = 0; $l < count($post); $l++) { ?>
-                <h3><?= $post[$l]['author'] ?></h3>
-                <h5><?= $post[$l]['title'] ?></h5>
-                <p><?= $post[$l]['text'] ?></p>
-                <img src="<?= $post[$l]['image'] ?>" alt="">
-
+    <main class="d-flex justify-content-center">
+        <div class="container d-flex flex-column">
+            <?php for ($i = 0; $i < count($dates); $i++) {
+                $date = $dates[$i];
+                $post = $posts[$date];
+            ?>
+                <h3><em><?= $date ?></em></h3>
+                <?php for ($l = 0; $l < count($post); $l++) { ?>
+                    <div class="col-6">
+                        <div class="post-info d-flex flex-row p-3">
+                            <h5 class="person"><?= $post[$l]['author'] ?> </h5>
+                            <h5>:"<?= $post[$l]['title'] ?>"</h5>
+                        </div>
+                        <div class="post-text p-3">
+                            <p><?= $post[$l]['text'] ?></p>
+                        </div>
+                        <div class="post-img">
+                            <img src="<?= $post[$l]['image'] ?>" alt="">
+                        </div>
+                    </div>
+                <? } ?>
             <? } ?>
-        <? } ?>
-        </ul>
-    </div>
+        </div>
+    </main>
+
 </body>
 
 </html>
