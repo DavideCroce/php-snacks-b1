@@ -10,11 +10,12 @@
 
 $numbs = [];
 
-while (count($numbs) !=  15) {
+while (count($numbs) !==  15) {
     $r_numbs = rand(1, 100);
     if (!in_array($r_numbs, $numbs)) {
-        $numbs = $r_numbs;
+        $numbs[] = $r_numbs;
     }
-};
-
+}
+echo '<pre>';
 var_dump($numbs);
+echo '</pre>';
